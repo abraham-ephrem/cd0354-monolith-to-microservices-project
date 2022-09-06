@@ -1,3 +1,5 @@
+apiVersion: apps/v1
+kind: ConfigMap
 environment:
   POSTGRES_DB: udagramdbabr
   POSTGRES_HOST: udagramdbabr.cabyclnrdko6.us-east-1.rds.amazonaws.com
