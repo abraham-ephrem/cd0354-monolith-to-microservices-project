@@ -1,29 +1,26 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    service: reverseproxy
   name: reverseproxy
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: reverseproxy
   template:
     metadata:
       labels:
-        service: reverseproxy
+        app: reverseproxy
     spec:
       containers:
-        - image: a1super/reverseproxy
-          name: reverseproxy
-          imagePullPolicy: Always
+        - name: reverseproxy
+          image: a1super/reverseproxy
           resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
             limits:
-              memory: "1024Mi"
+              memory: "128Mi"
               cpu: "500m"
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           envFrom:
             - configMapRef:
                 name: env-configmaps
