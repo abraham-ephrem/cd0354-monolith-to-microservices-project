@@ -21,6 +21,6 @@ spec:
             - containerPort: 80
           envFrom:
             - configMapRef:
-              name: env-configmap
+                name: env-configmap
             - secretRef:
-              name: env-secret
+                name: env-secret
