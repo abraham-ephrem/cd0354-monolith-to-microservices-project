@@ -1,6 +1,8 @@
-apiVersion: apps/v1
-kind: Deployment
-environment:
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp
+data:
   POSTGRES_DB: udagramdbabr
   POSTGRES_HOST: udagramdbabr.cabyclnrdko6.us-east-1.rds.amazonaws.com
   AWS_REGION: us-east-1
