@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: default
   name: myapp
 data:
   POSTGRES_DB: udagramdbabr
