@@ -23,7 +23,7 @@ spec:
             - containerPort: 80
           envFrom:
             - configMapRef:
-                name: env-configmaps
+                name: env-configmap
             - secretRef:
                 name: env-secret
       restartPolicy: Always
