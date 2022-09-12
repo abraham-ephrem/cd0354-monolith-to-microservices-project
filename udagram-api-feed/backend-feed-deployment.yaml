@@ -20,12 +20,12 @@ spec:
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: env-secret
                   key: POSTGRES_USERNAME
             - name: POSTGRES_PASSWORD
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: env-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_DB
@@ -62,10 +62,6 @@ spec:
             - name: aws-secret
               mountPath: "/root/.aws/"
               readOnly: true
-      volumes:
-        - name: aws-secret
-          secret:
-            secretName: aws-secret
           ports:
             - containerPort: 80
           envFrom:
@@ -73,3 +69,7 @@ spec:
                 name: env-configmap
             - secretRef:
                 name: env-secret
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: aws-secret
