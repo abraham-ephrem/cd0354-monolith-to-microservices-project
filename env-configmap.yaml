@@ -10,3 +10,4 @@ data:
   AWS_PROFILE: default
   AWS_BUCKET: udagram-dev-abraham
   JWT_SECRET: helloworld
+  URL: http://localhost:8100

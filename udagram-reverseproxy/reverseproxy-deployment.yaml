@@ -63,6 +63,11 @@ spec:
                 configMapKeyRef:
                   name: env-configmap
                   key: JWT_SECRET
+            - name: URL
+              valueFrom:
+                configMapKeyRef:
+                  name: env-configmap
+                  key: URL
           volumeMounts:
             - name: aws-secret
               mountPath: "/root/.aws/"
