@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: a1super/reverseproxy:v7
+          image: a1super/reverseproxy:v8
           ports:
             - containerPort: 80
           envFrom:
